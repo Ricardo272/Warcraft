@@ -21,6 +21,8 @@ require_once("Orc.php");
 
     echo "<br> Le héros " . $hero->getName() . " porte l'arme " . $hero->getWeaponName() . " et l'armure " . $hero->getShieldName();
 
+    while ($hero->hasNext()) {
+    }
 
     ?>
 </body>
