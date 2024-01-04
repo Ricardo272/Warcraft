@@ -3,11 +3,21 @@ class Character
 {
     private $health;
     private $rage;
+    private $shieldValue;
 
-    public function __construct($initialHealth, $initialRage)
+    public function __construct($initialHealth, $initialRage, $initialShieldValue)
     {
         $this->health = $initialHealth;
         $this->rage = $initialRage;
+        $this->shieldValue = $initialShieldValue;
+    }
+    public function getShieldValue()
+    {
+        return $this->shieldValue;
+    }
+    public function setShieldValue($newShieldValue)
+    {
+        $this->shieldValue = $newShieldValue();
     }
     public function getHealth()
     {
@@ -29,7 +39,14 @@ class Character
     {
         return $this->health > 0;
     }
+    public function beAttacked($damage)
+    {
+        $remainingDamage = max(0, $damage - $this->shieldValue);
+        $this->health = max(0, $this->health - $remainingDamage);
+        return $remainingDamage;
+    }
 }
+
 
 
 ?>
