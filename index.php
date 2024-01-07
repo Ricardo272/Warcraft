@@ -14,7 +14,7 @@ require_once("Orc.php");
 
 <body>
     <?php
-    $hero = new Hero(1000, 0, 450, "Capt'n Rickson", "Dev's Gun", 250, "Dev's Shield", 400);
+    $hero = new Hero(1000, 0, 400, "Capt'n Rickson", "Dev's Gun", 400, "Dev's Shield", 400);
     $orc = new Orc(2000, 0, "");
 
     echo "<br> Le héros " . $hero->getName() . " utilise " . $hero->getWeaponName() . " qui inflige " . $hero->getWeaponDamage() . " points de dégats ", "<br>Il porte le " . $hero->getShieldName() . " qui lui prodigue " . $hero->getShieldValue() . " points d'armure <br>" . $hero->getName() . " a 1000 points de vie";

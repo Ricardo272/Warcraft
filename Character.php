@@ -49,9 +49,11 @@ class Character
 
     public function beAttacked($damage)
     {
-        $remainingDamage = max(0, $damage - $this->shieldValue);
-        $this->health = max(0, $this->health - $remainingDamage);
+        $remainingDamage = max(0, $damage - $this->shieldValue); // Calcul des dégâts restants après avoir utilisé le bouclier
+        $this->shieldValue = max(0, $this->shieldValue - $damage); // Réduction du bouclier
+        $this->health = max(0, $this->health - $remainingDamage); // Réduction des points de vie
         return $remainingDamage;
     }
+
 }
 ?>
