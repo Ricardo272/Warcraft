@@ -14,16 +14,12 @@ require_once("Orc.php");
 
 <body>
     <?php
+    $hero = new Hero(1000, 0, 450, "Capt'n Rickson", "Dev's Gun", 250, "Dev's Shield", 400);
+    $orc = new Orc(2000, 0, "");
 
-    $hero = new Hero(1000, 0, "Capt'n Rickson", "Dev's Gun", 250, "Dev's Shield", 450);
-    $orc = new Orc(2000, 0, "feu");
+    echo "<br> Le héros " . $hero->getName() . " utilise " . $hero->getWeaponName() . " qui inflige " . $hero->getWeaponDamage() . " points de dégats ", "<br>Il porte le " . $hero->getShieldName() . " qui lui prodigue " . $hero->getShieldValue() . " points d'armure <br>" . $hero->getName() . " a 1000 points de vie";
 
-
-    echo "<br> Le héros " . $hero->getName() . " utilise " . $hero->getWeaponName() . " qui inflige " . $hero->getWeaponDamage() . " points de dégats ", "<br>Il porte le " . $hero->getShieldName() . " qui lui prodigue " . $hero->getShieldValue() . " points d'armure <br>" . $hero->getName() . " n'a que 1000 points de vie";
-
-    echo "<hr><br> l'Orc a " . $orc->getHealth() . " points de vie, " . $orc->getRage() . " point de rage et est de type " . $orc->getRage();
-
-
+    echo "<hr><br> l'Orc a " . $orc->getHealth() . " points de vie, " . $orc->getRage() . " point de rage et est de type " . $orc->getType() . "<hr>";
 
     while ($hero->isAlive() && $orc->isAlive()) {
         // Le héros attaque l'orc
